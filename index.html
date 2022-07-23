@@ -2,10 +2,20 @@
 <div>
   <p>Butterflies</p> 
   <img id="picture" src="https://img.freepik.com/premium-vector/watercolour-collection-flying-butterflies_125155-122.jpg?w=1060" alt=butterflies width="400" height="200">
+<button id="change-image">Change Image</button>
 </div>
 <script>
-document.getElementById('picture').addEventListener('click', (event) => {
-  event.target.setAttribute("src", 'https://img.freepik.com/premium-vector/watercolour-collection-flying-butterflies_125155-118.jpg?w=1060');
+var imageSrc, images;
+
+
+images = ['https://img.freepik.com/premium-vector/watercolour-collection-flying-butterflies_125155-122.jpg?w=1060', 'https://img.freepik.com/premium-vector/watercolour-collection-flying-butterflies_125155-118.jpg?w=1060', 'https://img.freepik.com/premium-vector/watercolour-collection-flying-butterflies_125155-120.jpg?w=1060'];
+
+
+document.getElementById('change-image').addEventListener('click', (event) => {
+  imageSrc = images.shift();
+  let element_picture = document.getElementById('picture');
+  element_picture.setAttribute("src", imageSrc);
+
 });
 </script>
 </html>
